@@ -2,6 +2,12 @@ BEGIN TRANSACTION;
 
 /* Create a table */
 
+CREATE TABLE Persons (
+    PersonID integer PRIMARY KEY,
+    LastName text,
+    FirstName text,
+    Age int
+);
 
 CREATE TABLE Orders (
     OrderID int,
@@ -10,15 +16,6 @@ CREATE TABLE Orders (
     PRIMARY KEY (OrderID),
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
 );
-
-
-CREATE TABLE Persons (
-    PersonID integer PRIMARY KEY,
-    LastName text,
-    FirstName text,
-    Age int
-);
-
 
 /* Create few records in this table */
 INSERT INTO Persons VALUES(1,'Hansen','Ola',30);

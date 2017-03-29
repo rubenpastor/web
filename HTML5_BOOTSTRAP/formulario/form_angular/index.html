@@ -35,20 +35,20 @@
         <label class="control-label col-md-2" for="correo">Correo:</label>
         <div class="col-md-10">
           <input class="form-control" type="email" name="email" ng-model="datos.email" id="correo" required>
-          <span style="color:red" ng-show="formulario.email.$dirty && formulario.email.$invalid">
-            <span ng-show="formulario.email.$error.required">
+          <!--<span style="color:red" ng-show="formulario.email.$dirty && formulario.email.$invalid"> -->
+            <small style="color:red" ng-show="formulario.email.$error.required">
               Email obligatorio
-            </span>
-            <span ng-show="formulario.email.$error.email">
+            </small>
+            <small style="color:red" ng-show="formulario.email.$error.email">
               Email invalido
-            </span>
-          </span>
+            </small>
+        <!--  </span> -->
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-md-2 col-md-offset-2">
-          <button ng-disabled="formulario.nombre.$dirty && formulario.nombre.$invalid || formulario.email.$dirty && formulario.email.$invalid" type="submit" class="btn btn-primary">Enviar</button>
+          <button ng-disabled="formulario.$dirty && formulario.$invalid" type="submit" class="btn btn-primary">Enviar</button>
         </div>
         <div class="col-md-2">
           <button ng-click="limpiar()" class="btn btn-primary">Limpiar</button>
